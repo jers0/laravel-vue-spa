@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Support\Facades\DB;
 
 class RegisterController extends Controller
 {
@@ -21,6 +22,13 @@ class RegisterController extends Controller
     public function __construct()
     {
         $this->middleware('guest');
+    }
+
+    protected function test()
+    {
+        $publicOrders = DB::table('lts_public_order')->where('ordr_id_xbid', '>', 216871231)->get();
+
+        return response()->json($publicOrders);
     }
 
     /**
