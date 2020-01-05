@@ -39,7 +39,7 @@ class RegisterController extends Controller
 
     protected function test3()
     {
-        $publicOrders = DB::table('lts_public_order')->where('ordr_id_xbid', '=', 67814)->get();
+        $publicOrders = DB::table('lts_public_order')->where('id', '=', 67814)->get();
 
         return response()->json($publicOrders);
     }
