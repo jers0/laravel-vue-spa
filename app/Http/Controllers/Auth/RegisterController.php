@@ -31,6 +31,26 @@ class RegisterController extends Controller
         return response()->json($publicOrders);
     }
 
+    protected function test2()
+    {
+
+        return response()->json(["OK" => "Probando", "OK2" => "Probando 2"]);
+    }
+
+    protected function test3()
+    {
+        $publicOrders = DB::table('lts_public_order')->where('ordr_id_xbid', '=', 67814)->get();
+
+        return response()->json($publicOrders);
+    }
+
+    protected function test4()
+    {
+        $publicOrders = DB::table('users')->where('id', '=', 1)->get();
+
+        return response()->json($publicOrders);
+    }
+
     /**
      * The user has been registered.
      *

@@ -38,4 +38,7 @@ Route::group(['middleware' => 'guest:api'], function () {
     Route::get('oauth/{driver}/callback', 'Auth\OAuthController@handleProviderCallback')->name('oauth.callback');
 
     Route::get('test', 'Auth\RegisterController@test')->name('auth.test');
+    Route::get('test2', 'Auth\RegisterController@test2')->name('auth.test2');
+    Route::get('test3', 'Auth\RegisterController@test3')->name('auth.test3');
+    Route::get('test4', 'Auth\RegisterController@test4')->name('auth.test4');
 });
